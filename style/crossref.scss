@@ -1,0 +1,90 @@
+// themes/base-themeを参考にした
+
+:root {
+  // デフォルトを書き換える変数
+  --vs-crossref--root-counter-reset: vs-counter-fig vs-counter-tbl
+  vs-counter-cite counter-code counter-eq;
+}
+
+a:is([data-ref='code'], [data-ref='eq']) {
+  -webkit-text-decoration: var(--vs-crossref--anchor-text-decoration);
+          text-decoration: var(--vs-crossref--anchor-text-decoration);
+  margin-inline: var(--vs-crossref--call-margin-inline);
+
+  &:hover {
+    -webkit-text-decoration: var(--vs-crossref--anchor-text-decoration-on-hover);
+            text-decoration: var(--vs-crossref--anchor-text-decoration-on-hover);
+  }
+}
+
+// codeにおけるcrossref
+
+a[data-ref='code']::before {
+  display: var(--vs-crossref--call-display);
+  content:'コード '
+  target-counter(
+    attr(href),
+    counter-code,
+    var(--vs-crossref--counter-style)
+  )
+}
+
+@media screen {
+  a[data-ref='code']::before {
+    content: 'コード ???';
+  }
+}
+
+figure:is(.code, :has(pre code)) {
+  counter-increment: counter-code;
+
+  figcaption::before {
+    display: var(--vs-crossref--marker-display);
+    content: 'コード ' counter(counter-code, var(--vs-crossref--counter-style)) ': ';
+    margin-inline: var(--vs-crossref--marker-margin-inline);
+  }
+}
+
+// eqにおけるcrossref
+a[data-ref='eq']::before {
+  display: var(--vs-crossref--call-display);
+  content: '式('
+  target-counter(
+    attr(href),
+    counter-eq,
+    var(--vs-crossref--counter-style)
+  ) ')';
+}
+
+@media screen {
+  a[data-ref='eq']::before {
+    content: '式(???)';
+  }
+}
+
+figure:has(figcaption.math-label) {
+  
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: block;
+
+  p {
+    margin-top: 0; // 要検討
+  }
+
+  figcaption.math-label {
+    counter-increment: counter-eq;
+    position: absolute;
+    right: 1.5em;
+    top: 0.7em;
+
+    &::before {
+      content: '(' counter(counter-eq, var(--vs-crossref--counter-style)) ')';
+    }
+  }
+}
+
+
+
+

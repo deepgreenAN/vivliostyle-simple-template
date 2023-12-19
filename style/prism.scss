@@ -1,0 +1,48 @@
+:root {
+  // prismに関するcss変数を変更
+  --vs-prism--background: #0c3a68;
+  --vs-prism--color: #f8f8f2;
+
+  --vs-prism--color-comment: #6a9955;
+  --vs-prism--color-prolog: #6a9955;
+  --vs-prism--color-doctype: #569CD6;
+  --vs-prism--color-cdata: #808080;
+
+  --vs-prism--color-punctuation: #d4d4d4;
+
+  --vs-prism--color-namespace: rgba(248, 248, 242, 0.7);
+
+  --vs-prism--color-property: #f92672;
+  --vs-prism--color-tag: #f92672;
+  --vs-prism--color-constant: #f92672;
+  --vs-prism--color-symbol: #f92672;
+  --vs-prism--color-deleted: #f92672;
+
+  --vs-prism--color-boolean: #ae81ff;
+  --vs-prism--color-number: #ae81ff;
+
+  --vs-prism--color-selector: #a6e22e;
+  --vs-prism--color-attr-name: #a6e22e;
+  --vs-prism--color-string: #a6e22e;
+  --vs-prism--color-char: #a6e22e;
+  --vs-prism--color-builtin: #a6e22e;
+  --vs-prism--color-inserted: #a6e22e;
+
+  --vs-prism--color-entity: #f8f8f2;
+  --vs-prism--color-url: #f8f8f2;
+  --vs-prism--color-variable: #f8f8f2;
+  --vs-prism--color-attr-value: #f8f8f2;
+
+  --vs-prism--color-atrule: #e6db74;
+  --vs-prism--color-class-name: #e6db74;
+
+  --vs-prism--color-function: #96f4fe;
+
+  --vs-prism--color-keyword: #ff9b3d;
+  --vs-prism--color-operator: #ff9b3d;
+
+  --vs-prism--color-regex: #fd971f;
+  --vs-prism--color-important: #fd971f;
+
+  --vs-prism--text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}

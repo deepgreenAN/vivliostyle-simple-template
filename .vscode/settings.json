@@ -1,0 +1,13 @@
+{
+    "markdown.styles": [
+        "style.css"
+    ],
+    "markdownlint.config": {
+        "MD025": false,
+        "MD033": false,
+    },
+    "editor.tabSize": 2,
+    "cSpell.words": [
+        "crossref"
+    ]
+}

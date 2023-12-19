@@ -1,0 +1,71 @@
+@use "./components.scss";
+@use './prism.scss';
+@use './crossref.scss';
+
+// font icon
+@import 'https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack.min.css';
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css');
+
+
+:root {
+  // 自分で利用する変数
+  --font-size-text: var(--vs-font-size);
+  --font-size-text-large: calc(1.2 * var(--font-size-text));
+  --primary-color: #00258c;
+  --page-top-content: env(pub-title);
+  --page-bottom-content: counter(page);
+
+  // デフォルトを書き換える変数
+  --vs-font-family:  'Montserrat', 'BIZ UDGothic', 'Verdana', 'Yu Gothic'; // windows対応
+  --vs--monospace-font-family: 'hack', 'Consolas'; // windows対応
+
+  --vs-section--marker-display: inline;
+  --vs-section--h1-marker-content: counter(vs-counter-sec-h1);
+  --vs-section--h2-marker-content: counter(vs-counter-sec-h1) '.' counter(vs-counter-sec-h2);
+  --vs-section--h3-marker-content: counter(vs-counter-sec-h1) '.' counter(vs-counter-sec-h2) '.' counter(vs-counter-sec-h3);
+  --vs-section--h4-marker-content: counter(vs-counter-sec-h1) '.' counter(vs-counter-sec-h2) '.' counter(vs-counter-sec-h3) '.' counter(vs-counter-sec-h4);
+
+  // テーマを書き換える変数
+  --vs-theme--page-top-left-content: none; // リセット
+  --vs-theme--page-top-right-content: none; // リセット
+  --vs-theme--page-bottom-content: none; // リセット
+}
+
+
+// 要素セレクタについて
+blockquote {
+  border-left: 8px solid var(--primary-color);
+  border-radius: 8px;
+  background-color: #fef2e2;
+  font-size: var(--font-size-text);
+  padding: 0.8em 1em 0.8em 1em;
+
+  p::before {
+    content: "\F6B0";
+    font-family: "bootstrap-icons";
+    margin-right: 0.8em;
+    color: var(--primary-color);
+  }
+}
+figure {
+  figcaption {
+    margin: 0;
+  }
+  // タイトル付きソースコード
+  figcaption + pre {
+    margin-top: 0;
+  }
+}
+
+// ページについて
+@page :left {
+  --vs-page--mbox-content-top-left: var(--page-top-content);
+  --vs-page--mbox-content-bottom-center: var(--page-bottom-content);
+}
+
+@page :right {
+  --vs-page--mbox-content-top-left: var(--page-top-content);
+  --vs-page--mbox-content-bottom-center: var(--page-bottom-content);
+}

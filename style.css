@@ -1,0 +1,202 @@
+@charset "UTF-8";
+@import 'https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack.min.css';
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+.info, .note, .warn, .theorem {
+  display: flex;
+  flex-direction: column;
+  border-left: 8px solid;
+  border-radius: 4px;
+  padding: 0.6em 1.2em 0.6em 1.2em;
+}
+.info:not(:last-child), .note:not(:last-child), .warn:not(:last-child), .theorem:not(:last-child) {
+  margin-bottom: 0.6rem;
+}
+.info .caption, .note .caption, .warn .caption, .theorem .caption {
+  width: 100%;
+  height: 1.2em;
+  font-size: var(--font-size-text-large);
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  display: inline-flex;
+  align-items: center;
+}
+.info .caption::before, .note .caption::before, .warn .caption::before, .theorem .caption::before {
+  width: 1.9em;
+  margin: 0.3em 0.6em 0 0;
+}
+
+.info {
+  background-color: rgb(163, 212, 250);
+  border-color: rgb(55, 166, 250);
+}
+.info .caption::before {
+  content: url("assets/template/info.svg");
+  width: 1.7em;
+}
+
+.warn {
+  background-color: rgb(249, 119, 154);
+  border-color: rgb(180, 43, 80);
+}
+.warn .caption::before {
+  content: url("assets/template/warning.svg");
+}
+
+.theorem {
+  background-color: rgb(249, 188, 119);
+  border-color: rgb(192, 129, 56);
+}
+.theorem .caption::before {
+  content: url("assets/template/book.svg");
+}
+
+:root {
+  --vs-prism--background: #0c3a68;
+  --vs-prism--color: #f8f8f2;
+  --vs-prism--color-comment: #6a9955;
+  --vs-prism--color-prolog: #6a9955;
+  --vs-prism--color-doctype: #569CD6;
+  --vs-prism--color-cdata: #808080;
+  --vs-prism--color-punctuation: #d4d4d4;
+  --vs-prism--color-namespace: rgba(248, 248, 242, 0.7);
+  --vs-prism--color-property: #f92672;
+  --vs-prism--color-tag: #f92672;
+  --vs-prism--color-constant: #f92672;
+  --vs-prism--color-symbol: #f92672;
+  --vs-prism--color-deleted: #f92672;
+  --vs-prism--color-boolean: #ae81ff;
+  --vs-prism--color-number: #ae81ff;
+  --vs-prism--color-selector: #a6e22e;
+  --vs-prism--color-attr-name: #a6e22e;
+  --vs-prism--color-string: #a6e22e;
+  --vs-prism--color-char: #a6e22e;
+  --vs-prism--color-builtin: #a6e22e;
+  --vs-prism--color-inserted: #a6e22e;
+  --vs-prism--color-entity: #f8f8f2;
+  --vs-prism--color-url: #f8f8f2;
+  --vs-prism--color-variable: #f8f8f2;
+  --vs-prism--color-attr-value: #f8f8f2;
+  --vs-prism--color-atrule: #e6db74;
+  --vs-prism--color-class-name: #e6db74;
+  --vs-prism--color-function: #96f4fe;
+  --vs-prism--color-keyword: #ff9b3d;
+  --vs-prism--color-operator: #ff9b3d;
+  --vs-prism--color-regex: #fd971f;
+  --vs-prism--color-important: #fd971f;
+  --vs-prism--text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+
+:root {
+  --vs-crossref--root-counter-reset: vs-counter-fig vs-counter-tbl
+  vs-counter-cite counter-code counter-eq;
+}
+
+a:is([data-ref=code], [data-ref=eq]) {
+  -webkit-text-decoration: var(--vs-crossref--anchor-text-decoration);
+  text-decoration: var(--vs-crossref--anchor-text-decoration);
+  margin-inline: var(--vs-crossref--call-margin-inline);
+}
+a:is([data-ref=code], [data-ref=eq]):hover {
+  -webkit-text-decoration: var(--vs-crossref--anchor-text-decoration-on-hover);
+  text-decoration: var(--vs-crossref--anchor-text-decoration-on-hover);
+}
+
+a[data-ref=code]::before {
+  display: var(--vs-crossref--call-display);
+  content: "コード " target-counter(attr(href), counter-code, var(--vs-crossref--counter-style));
+}
+
+@media screen {
+  a[data-ref=code]::before {
+    content: "コード ???";
+  }
+}
+figure:is(.code, :has(pre code)) {
+  counter-increment: counter-code;
+}
+figure:is(.code, :has(pre code)) figcaption::before {
+  display: var(--vs-crossref--marker-display);
+  content: "コード " counter(counter-code, var(--vs-crossref--counter-style)) ": ";
+  margin-inline: var(--vs-crossref--marker-margin-inline);
+}
+
+a[data-ref=eq]::before {
+  display: var(--vs-crossref--call-display);
+  content: "式(" target-counter(attr(href), counter-eq, var(--vs-crossref--counter-style)) ")";
+}
+
+@media screen {
+  a[data-ref=eq]::before {
+    content: "式(???)";
+  }
+}
+figure:has(figcaption.math-label) {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+figure:has(figcaption.math-label) p {
+  margin-top: 0;
+}
+figure:has(figcaption.math-label) figcaption.math-label {
+  counter-increment: counter-eq;
+  position: absolute;
+  right: 1.5em;
+  top: 0.7em;
+}
+figure:has(figcaption.math-label) figcaption.math-label::before {
+  content: "(" counter(counter-eq, var(--vs-crossref--counter-style)) ")";
+}
+
+:root {
+  --font-size-text: var(--vs-font-size);
+  --font-size-text-large: calc(1.2 * var(--font-size-text));
+  --primary-color: #00258c;
+  --page-top-content: env(pub-title);
+  --page-bottom-content: counter(page);
+  --vs-font-family: "Montserrat", "BIZ UDGothic", "Verdana", "Yu Gothic";
+  --vs--monospace-font-family: "hack", "Consolas";
+  --vs-section--marker-display: inline;
+  --vs-section--h1-marker-content: counter(vs-counter-sec-h1);
+  --vs-section--h2-marker-content: counter(vs-counter-sec-h1) "." counter(vs-counter-sec-h2);
+  --vs-section--h3-marker-content: counter(vs-counter-sec-h1) "." counter(vs-counter-sec-h2) "." counter(vs-counter-sec-h3);
+  --vs-section--h4-marker-content: counter(vs-counter-sec-h1) "." counter(vs-counter-sec-h2) "." counter(vs-counter-sec-h3) "." counter(vs-counter-sec-h4);
+  --vs-theme--page-top-left-content: none;
+  --vs-theme--page-top-right-content: none;
+  --vs-theme--page-bottom-content: none;
+}
+
+blockquote {
+  border-left: 8px solid var(--primary-color);
+  border-radius: 8px;
+  background-color: #fef2e2;
+  font-size: var(--font-size-text);
+  padding: 0.8em 1em 0.8em 1em;
+}
+blockquote p::before {
+  content: "\f6b0";
+  font-family: "bootstrap-icons";
+  margin-right: 0.8em;
+  color: var(--primary-color);
+}
+
+figure figcaption {
+  margin: 0;
+}
+figure figcaption + pre {
+  margin-top: 0;
+}
+
+@page :left {
+  --vs-page--mbox-content-top-left: var(--page-top-content);
+  --vs-page--mbox-content-bottom-center: var(--page-bottom-content);
+}
+@page :right {
+  --vs-page--mbox-content-top-left: var(--page-top-content);
+  --vs-page--mbox-content-bottom-center: var(--page-bottom-content);
+}
+
+/*# sourceMappingURL=style.css.map */
