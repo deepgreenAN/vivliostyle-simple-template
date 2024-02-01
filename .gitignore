@@ -1,3 +1,4 @@
 *.pdf
 .vivliostyle
 *.css.map
+.temp_pueue_ids

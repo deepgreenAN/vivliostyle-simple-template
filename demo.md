@@ -9,7 +9,7 @@
 
 $p$を素数，$a$を整数とすると
   <figure>
-    <figcaption class="math-label" id="eq-fermat" style="top:0.7em"></figcaption>
+  <figcaption class="math-label" id="eq-fermat" style="top:0.7em"></figcaption>
 
   $$
       a^p \equiv a \pmod{p}
