@@ -1,3 +1,8 @@
+# 利用する環境変数のアサーション
+if $env.VIVLIOSTYLE_BROUSER_PATH? == null {
+  error make {msg: "Environment bariable 'VIVLIOSTYLE_BROUSER_PATH' is not setted." }
+}
+
 # pueueグループをテーブルとして取得する．
 def pueue_group [
 ] {
@@ -43,22 +48,39 @@ def append_string_list [
 
 
 # コマンドランナー用dev(just内で利用する)
-def dev_command [] {
-  if "vivliostyle" not-in (pueue_group | get group_name) {^pueue group add vivliostyle}
-  if (pueue_status -g vivliostyle | get status | any {|status| $status.Done? == null}) {error make { msg: "Other tasks of vivliostyle are still running. Please kill the task."}}
-  pueue pause -g vivliostyle
-  let vivliostyle_id = (^pueue add -g vivliostyle -p 'npx vivliostyle preview --config vivliostyle.config.js --style style.css --executable-browser "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"')
-  let sass_id = (^pueue add -g vivliostyle -p 'nu --commands "watch style {|| sass style/index.scss style.css}"')
-  [$vivliostyle_id $sass_id] | to json | save -f .temp_pueue_ids  # id_listを保存 
-  ^pueue parallel 2 -g vivliostyle
-  ^pueue start -g vivliostyle
+def dev_command [
+  pueue_group_name: string,
+  temp_file_path: string
+] {
+  if $pueue_group_name not-in (pueue_group | get group_name) {
+    ^pueue group add $pueue_group_name
+  }
+  if (pueue_status -g $pueue_group_name | get status | any {|status| ($status | describe) == string }) {
+    error make { 
+      msg: "Other tasks of vivliostyle are still running. Please kill the task."
+      }
+  }
+  pueue pause -g $pueue_group_name
+  print $env.VIVLIOSTYLE_BROUSER_PATH
+  let vivliostyle_id = (^pueue add -g $pueue_group_name -p "nu -c 'vivliostyle preview --config vivliostyle.config.js --style style.css --executable-browser $env.VIVLIOSTYLE_BROUSER_PATH'")
+  let sass_id = (^pueue add -g $pueue_group_name -p "nu -c 'watch style {|| sass style/index.scss style.css}'")
+  [$vivliostyle_id $sass_id] | to json | save -f $temp_file_path  # id_listを保存 
+  ^pueue parallel 2 -g $pueue_group_name
+  ^pueue start -g $pueue_group_name
+  print "Starting dev server for this vivliostyle template. Please wait for it."
 }
 
 # コマンドランナー用dev_finish(just内で利用する)
-def dev_finish_command [] {
-  if (".temp_pueue_ids" | path exists) {
-    let id_list = open ".temp_pueue_ids" | from json # id_listを読み込み
-    ^pueue kill -g vivliostyle $id_list
-    rm ".temp_pueue_ids"
+def dev_finish_command [
+  pueue_group_name: string,
+  temp_file_path: string
+] {
+  if ($temp_file_path| path exists) {
+    let id_list = open $temp_file_path| from json # id_listを読み込み
+    ^pueue kill -g $pueue_group_name $id_list
+    rm $temp_file_path
+    sleep 500ms
+    ^pueue clean -g $pueue_group_name
+    print "Finished dev server."
   }
 }
