@@ -1,25 +1,53 @@
 @use "./components.scss";
 @use './prism.scss';
 @use './crossref.scss';
+@use "./color.scss";
+@use "./utils.scss";
 
 // font icon
 @import 'https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack.min.css';
-@import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css');
 
-
 :root {
-  // 自分で利用する変数
-  --font-size-text: var(--vs-font-size);
-  --font-size-text-large: calc(1.2 * var(--font-size-text));
-  --primary-color: #00258c;
+  // # 自分で利用する変数
+  --font-size-text: var(--vs-font-size); // 絶対サイズ
+  --font-size-text-large: calc(1.2 * var(--font-size-text));  // 絶対サイズ
   --page-top-content: env(pub-title);
   --page-bottom-content: counter(page);
 
-  // デフォルトを書き換える変数
-  --vs-font-family:  'Montserrat', 'BIZ UDGothic', 'Verdana', 'Yu Gothic'; // windows対応
-  --vs--monospace-font-family: 'hack', 'Consolas'; // windows対応
+  // ## シンプルな色変数
+  --color-red: #f55555;
+  --color-red-rgb: 245, 85, 85;
+  --color-blue: #3892f2;
+  --color-blue-rgb: 56, 146, 242;
+  --color-green: #06a306;
+  --color-green-rgb: 6, 163, 6;
+  --color-yellow: #cece27;
+  --color-yellow-rgb: 206, 206, 39;
+  --color-orange: #ffa600;
+  --color-orange-rgb: 255, 166, 0;
+  --color-purple: #c056f4;
+  --color-purple-rgb: 192, 86, 244;
+  --color-pink: #fd96a7;
+  --color-pink-rgb: 253, 150, 167;
+  --color-light-blue: #00d0ff;
+  --color-light-blue-rgb: 0, 208, 255;
+  --color-light-green: #a4fa7f;
+  --color-light-green-rgb: 164, 250, 127;
+
+  // ## テーマカラー
+  --primary-color: #00258c;
+  --primary-color-rgb: 0, 37, 140;
+  --secondary-color: #fcaf21;
+  --secondary-color-rgb: 252, 175, 33;
+
+  // # デフォルトを書き換える変数
+  --vs-font-family: 'Roboto', 'Noto Sans JP', 'Verdana', 'Yu Gothic'; // windowsに対応
+  --vs--monospace-font-family: 'hack', 'Consolas'; // windowsに対応
 
   --vs-section--marker-display: inline;
   --vs-section--h1-marker-content: counter(vs-counter-sec-h1);
@@ -35,6 +63,9 @@
 
 
 // 要素セレクタについて
+em {
+  font-family: 'Playfair Display', 'Noto Serif JP';
+}
 blockquote {
   border-left: 8px solid var(--primary-color);
   border-radius: 8px;

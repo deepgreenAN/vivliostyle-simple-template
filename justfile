@@ -20,10 +20,11 @@ build:
     sass style/index.scss style.css
     vivliostyle build --config vivliostyle.config.js --style style.css --executable-browser {{VIVLIOSTYLE_BROUSER_PATH}}
 
-# view demo
-preview_demo:
-    vivliostyle preview demo.md --theme @vivliostyle/theme-techbook --style style.css --executable-browser {{VIVLIOSTYLE_BROUSER_PATH}}
+# start dev_server with demo
+dev_demo:
+    source script.nu; dev_demo_command {{dev_pueue_group_name}} {{dev_pueue_temp_file_path}}
 
 # build demo
 build_demo:
+    sass style/index.scss style.css
     vivliostyle build demo.md --output demo.pdf --style style.css --executable-browser {{VIVLIOSTYLE_BROUSER_PATH}}

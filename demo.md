@@ -141,3 +141,115 @@ Rustというなまえはさび菌にちなんで付けられた．<span class="
 <ol class="cite-items">
   <li id="cite-rust-wiki">Rust(プログラミング言語) Wikipedia</li>
 </ol>
+
+# その他
+
+通常の文章．**強調された文章**．*斜体*, ~~訂正された文章~~
+
+<div class="blue font-large">
+色付き大の通常，<strong>色付き大の強調</strong>, <em>色付き大の斜体</em>, <del>色付き大の訂正</del>
+</div>
+<div class="bg-red">
+背景色付き通常，<strong>背景色付きの強調</strong>, <em>背景色付きの斜体</em>, <del>背景色付きの訂正</del>
+</div>
+<div class="under-line text-decoration-red" style="text-decoration-style: dotted;">
+下線付き通常，<strong>下線色付きの強調</strong>, <em>下線色付きの斜体</em>, <del>下線色付きの訂正</del>
+</div>
+
+<div class="border-yellow" style="border-radius: 10px;">
+
+枠付きの要素
+
+- a
+- b
+
+</div>
+
+以下はリストを段組みとしたもの．
+
+<div>
+縦二段組リスト(列方向フロー)
+</div>
+<div class="list-col-3-col border" style="--row-number: 4;">
+
+- あああああああああああああああああ
+- b
+- c
+- d
+- e
+- f
+- g
+- h
+- i
+- j
+- k
+
+</div>
+
+<div>
+縦二段組リスト(行方向フロー)
+</div>
+<div class="list-col-3-row border">
+
+<ul>
+  <li style="grid-column: 1 / 3">あああああああああああああ</li>
+  <li>b</li>
+  <li>c</li>
+  <li>d</li>
+  <li>e</li>
+  <li>f</li>
+  <li>g</li>
+  <li>h</li>
+  <li>i</li>
+</ul>
+
+</div>
+
+<div>
+縦二段組リスト(行方向フロー＋フレックス)
+</div>
+<div class="list-col-3-row-flex border">
+
+<ul>
+  <li style="--account-number:2;">あああああああああああああ</li>
+  <li>b</li>
+  <li>c</li>
+  <li style="--account-number:3;order:1;">いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい</li>
+  <li>e</li>
+  <li>f</li>
+  <li>g</li>
+  <li>h</li>
+  <li>i</li>
+</ul>
+
+</div>
+
+<div>
+横二段組リスト(行方向フロー)
+</div>
+<div class="list-row-2-row border" style="--column-number: 4;">
+
+- ああああああああ
+- b
+- c
+- d
+- e
+- f
+- g
+
+</div>
+
+<div>
+横二段組リスト(列方向フロー) *列数を指定しないため，widthを固定できない．
+</div>
+<div class="list-row-2-col border" >
+
+- ああああああああ
+- b
+- c
+- d
+- e
+- f
+- g
+
+</div>

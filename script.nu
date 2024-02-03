@@ -61,7 +61,6 @@ def dev_command [
       }
   }
   pueue pause -g $pueue_group_name
-  print $env.VIVLIOSTYLE_BROUSER_PATH
   let vivliostyle_id = (^pueue add -g $pueue_group_name -p "nu -c 'vivliostyle preview --config vivliostyle.config.js --style style.css --executable-browser $env.VIVLIOSTYLE_BROUSER_PATH'")
   let sass_id = (^pueue add -g $pueue_group_name -p "nu -c 'watch style {|| sass style/index.scss style.css}'")
   [$vivliostyle_id $sass_id] | to json | save -f $temp_file_path  # id_listを保存 
@@ -83,4 +82,26 @@ def dev_finish_command [
     ^pueue clean -g $pueue_group_name
     print "Finished dev server."
   }
+}
+
+# コマンドランナー用dev_demo(justないで利用する)
+def dev_demo_command [
+  pueue_group_name: string,
+  temp_file_path: string
+] {
+  if $pueue_group_name not-in (pueue_group | get group_name) {
+    ^pueue group add $pueue_group_name
+  }
+  if (pueue_status -g $pueue_group_name | get status | any {|status| ($status | describe) == string }) {
+    error make { 
+      msg: "Other tasks of vivliostyle are still running. Please kill the task."
+      }
+  }
+  pueue pause -g $pueue_group_name
+  let vivliostyle_id = (^pueue add -g $pueue_group_name -p "nu -c 'vivliostyle preview demo.md --theme @vivliostyle/theme-techbook --style style.css --executable-browser $env.VIVLIOSTYLE_BROUSER_PATH'")
+  let sass_id = (^pueue add -g $pueue_group_name -p "nu -c 'watch style {|| sass style/index.scss style.css}'")
+  [$vivliostyle_id $sass_id] | to json | save -f $temp_file_path  # id_listを保存 
+  ^pueue parallel 2 -g $pueue_group_name
+  ^pueue start -g $pueue_group_name
+  print "Starting dev server for this vivliostyle template. Please wait for it."
 }
