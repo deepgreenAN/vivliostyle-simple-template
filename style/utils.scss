@@ -28,6 +28,34 @@
   border-radius: 5px;
 }
 
+// text-align関連
+.text-align-left {
+  text-align: left;
+}
+table.text-align-left {
+  td {
+    text-align: left;
+  }
+}
+
+.text-align-right {
+  text-align: right;
+}
+table.text-align-right {
+  td {
+    text-align: right;
+  }
+}
+
+.text-align-center {
+  text-align: center;
+}
+table.text-align-center {
+  td {
+    text-align: center;
+  }
+}
+
 // 縦n段組みリスト
 @mixin list-col-n($n) { // n: 列数
   // 列方向・行方向フローの共通部分
@@ -156,4 +184,16 @@
 
 @for $i from 2 through 10 {
   @include list-row-n($i);
+} 
+
+// 等幅の表
+@for $i from 2 through 10 {
+  .table-col-#{$i} {
+    border-collapse: collapse;
+    width: 100%;
+
+    th, td {
+      width: calc(100% / $i);
+    }
+  }
 } 

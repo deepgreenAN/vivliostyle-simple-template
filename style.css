@@ -322,6 +322,177 @@ figure:has(figcaption.math-label) figcaption.math-label::before {
   border-width: 2px;
 }
 
+.table-red caption {
+  color: var(--color-red);
+}
+.table-red th, .table-red td {
+  border-style: solid;
+}
+.table-red th:not(#fake), .table-red td:not(#fake) {
+  border-style: solid;
+  border-width: 0.5mm;
+  border-color: var(--color-red);
+}
+.table-red th {
+  color: var(--color-red);
+  text-align: center;
+}
+.table-red tr:nth-child(odd):not(#fake) {
+  background-color: rgba(var(--color-red-rgb), 0.2);
+}
+
+.table-blue caption {
+  color: var(--color-blue);
+}
+.table-blue th, .table-blue td {
+  border-style: solid;
+}
+.table-blue th:not(#fake), .table-blue td:not(#fake) {
+  border-style: solid;
+  border-width: 0.5mm;
+  border-color: var(--color-blue);
+}
+.table-blue th {
+  color: var(--color-blue);
+  text-align: center;
+}
+.table-blue tr:nth-child(odd):not(#fake) {
+  background-color: rgba(var(--color-blue-rgb), 0.2);
+}
+
+.table-green caption {
+  color: var(--color-green);
+}
+.table-green th, .table-green td {
+  border-style: solid;
+}
+.table-green th:not(#fake), .table-green td:not(#fake) {
+  border-style: solid;
+  border-width: 0.5mm;
+  border-color: var(--color-green);
+}
+.table-green th {
+  color: var(--color-green);
+  text-align: center;
+}
+.table-green tr:nth-child(odd):not(#fake) {
+  background-color: rgba(var(--color-green-rgb), 0.2);
+}
+
+.table-yellow caption {
+  color: var(--color-yellow);
+}
+.table-yellow th, .table-yellow td {
+  border-style: solid;
+}
+.table-yellow th:not(#fake), .table-yellow td:not(#fake) {
+  border-style: solid;
+  border-width: 0.5mm;
+  border-color: var(--color-yellow);
+}
+.table-yellow th {
+  color: var(--color-yellow);
+  text-align: center;
+}
+.table-yellow tr:nth-child(odd):not(#fake) {
+  background-color: rgba(var(--color-yellow-rgb), 0.2);
+}
+
+.table-orange caption {
+  color: var(--color-orange);
+}
+.table-orange th, .table-orange td {
+  border-style: solid;
+}
+.table-orange th:not(#fake), .table-orange td:not(#fake) {
+  border-style: solid;
+  border-width: 0.5mm;
+  border-color: var(--color-orange);
+}
+.table-orange th {
+  color: var(--color-orange);
+  text-align: center;
+}
+.table-orange tr:nth-child(odd):not(#fake) {
+  background-color: rgba(var(--color-orange-rgb), 0.2);
+}
+
+.table-purple caption {
+  color: var(--color-purple);
+}
+.table-purple th, .table-purple td {
+  border-style: solid;
+}
+.table-purple th:not(#fake), .table-purple td:not(#fake) {
+  border-style: solid;
+  border-width: 0.5mm;
+  border-color: var(--color-purple);
+}
+.table-purple th {
+  color: var(--color-purple);
+  text-align: center;
+}
+.table-purple tr:nth-child(odd):not(#fake) {
+  background-color: rgba(var(--color-purple-rgb), 0.2);
+}
+
+.table-pink caption {
+  color: var(--color-pink);
+}
+.table-pink th, .table-pink td {
+  border-style: solid;
+}
+.table-pink th:not(#fake), .table-pink td:not(#fake) {
+  border-style: solid;
+  border-width: 0.5mm;
+  border-color: var(--color-pink);
+}
+.table-pink th {
+  color: var(--color-pink);
+  text-align: center;
+}
+.table-pink tr:nth-child(odd):not(#fake) {
+  background-color: rgba(var(--color-pink-rgb), 0.2);
+}
+
+.table-light-blue caption {
+  color: var(--color-light-blue);
+}
+.table-light-blue th, .table-light-blue td {
+  border-style: solid;
+}
+.table-light-blue th:not(#fake), .table-light-blue td:not(#fake) {
+  border-style: solid;
+  border-width: 0.5mm;
+  border-color: var(--color-light-blue);
+}
+.table-light-blue th {
+  color: var(--color-light-blue);
+  text-align: center;
+}
+.table-light-blue tr:nth-child(odd):not(#fake) {
+  background-color: rgba(var(--color-light-blue-rgb), 0.2);
+}
+
+.table-light-green caption {
+  color: var(--color-light-green);
+}
+.table-light-green th, .table-light-green td {
+  border-style: solid;
+}
+.table-light-green th:not(#fake), .table-light-green td:not(#fake) {
+  border-style: solid;
+  border-width: 0.5mm;
+  border-color: var(--color-light-green);
+}
+.table-light-green th {
+  color: var(--color-light-green);
+  text-align: center;
+}
+.table-light-green tr:nth-child(odd):not(#fake) {
+  background-color: rgba(var(--color-light-green-rgb), 0.2);
+}
+
 .font-xlarge {
   font-size: 1.5em;
 }
@@ -347,6 +518,30 @@ figure:has(figcaption.math-label) figcaption.math-label::before {
   border-style: solid;
   border-width: 2px;
   border-radius: 5px;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+table.text-align-left td {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+table.text-align-right td {
+  text-align: right;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+table.text-align-center td {
+  text-align: center;
 }
 
 .list-col-2-col, .list-col-2-row, .list-col-2-row-flex {
@@ -909,6 +1104,78 @@ figure:has(figcaption.math-label) figcaption.math-label::before {
 .list-row-10-col ul {
   grid-auto-columns: auto;
   grid-auto-flow: column;
+}
+
+.table-col-2 {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-col-2 th, .table-col-2 td {
+  width: 50%;
+}
+
+.table-col-3 {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-col-3 th, .table-col-3 td {
+  width: 33.3333333333%;
+}
+
+.table-col-4 {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-col-4 th, .table-col-4 td {
+  width: 25%;
+}
+
+.table-col-5 {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-col-5 th, .table-col-5 td {
+  width: 20%;
+}
+
+.table-col-6 {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-col-6 th, .table-col-6 td {
+  width: 16.6666666667%;
+}
+
+.table-col-7 {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-col-7 th, .table-col-7 td {
+  width: 14.2857142857%;
+}
+
+.table-col-8 {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-col-8 th, .table-col-8 td {
+  width: 12.5%;
+}
+
+.table-col-9 {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-col-9 th, .table-col-9 td {
+  width: 11.1111111111%;
+}
+
+.table-col-10 {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-col-10 th, .table-col-10 td {
+  width: 10%;
 }
 
 :root {

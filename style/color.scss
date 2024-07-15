@@ -35,3 +35,35 @@ $color-list: "red", "blue", "green", "yellow", "orange", "purple", "pink", "ligh
         border-width: 2px;
     }
 }
+
+// 各種色テーブルについて
+@for $i from 1 through list.length($color-list) {
+    .table-#{list.nth($color-list, $i)}  {
+        caption {
+            color: var(--color-#{list.nth($color-list, $i)});   
+        }
+
+        th, td {
+            border-style: solid;
+            // 詳細度を無視する
+            &:not(#fake) {
+                border-style: solid;
+                border-width: 0.5mm;
+                border-color: var(--color-#{list.nth($color-list, $i)});
+            }
+        }
+        
+        th {
+            color: var(--color-#{list.nth($color-list, $i)});
+            text-align: center;
+        }
+
+        tr:nth-child(odd) {
+            // 詳細度を無視する
+            &:not(#fake) {
+                background-color: rgba(var(--color-#{list.nth($color-list, $i)}-rgb), 0.2);  
+            }
+            // background-color: rgba(var(--color-#{list.nth($color-list, $i)}-rgb), 0.2);
+        }
+    }
+}
