@@ -276,3 +276,52 @@ Rustというなまえはさび菌にちなんで付けられた．<span class="
     <td>4-2</td>
   </tr>
 </table>
+
+<figure>
+  <img src="./assets/demo/pc.jpg" alt="pc">
+  <figcaption>普通の画像</figcaption>
+</figure>
+
+- a
+- b
+- c
+- d
+
+<div class="layout-col-2" style="--left-width: 40%;">
+
+<figure>
+  <img src="./assets/demo/pc.jpg" alt="pc">
+  <figcaption>二段組としての画像</figcaption>
+</figure>
+
+<div>
+
+- a
+- b
+- c
+- d
+
+$$
+ y = ax + b \tag{1}
+$$
+
+</div>
+
+</div>
+
+aaaa
+
+<figure class="float-right">
+  <img src="./assets/demo/pc.jpg" alt="pc">
+  <figcaption>回り込む画像</figcaption>
+</figure>
+
+<div>
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+$$ y = ax + b $$
+
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+
+</div>

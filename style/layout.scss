@@ -1,0 +1,40 @@
+// 縦二段組みのレイアウト
+.layout-col-2 {
+  // それぞれのwidth
+  --left-width: 1fr;
+  --right-width: 1fr;
+  --gap: 0;
+
+  display: grid;
+  grid-template-columns: var(--left-width) var(--right-width);
+  grid-auto-flow: row;
+  row-gap: var(--gap);
+}
+
+// 縦3段組みのレイアウト
+.layout-col-3 {
+  // それぞれのwidth
+  --left-width: 1fr;
+  --center-width: 1fr;
+  --right-width: 1fr;
+  --gap: 0;
+
+  display: grid;
+  grid-template-columns: var(--left-width) var(--center-width) var(--right-width);
+  grid-auto-flow: row;
+  row-gap: var(--gap);
+}
+
+// フロート関連
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.float-clear-left {
+  clear: left;
+}
+.float-clear-right {
+  clear: right;
+}
