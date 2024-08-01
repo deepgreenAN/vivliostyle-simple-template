@@ -544,6 +544,12 @@ table.text-align-center td {
   text-align: center;
 }
 
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .list-col-2-col, .list-col-2-row, .list-col-2-row-flex {
   display: flex;
   justify-content: center;

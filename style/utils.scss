@@ -56,6 +56,13 @@ table.text-align-center {
   }
 }
 
+// 縦も横も中央よせ
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // 縦n段組みリスト
 @mixin list-col-n($n) { // n: 列数
   // 列方向・行方向フローの共通部分
