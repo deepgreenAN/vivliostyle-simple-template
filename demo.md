@@ -325,3 +325,29 @@ $$ y = ax + b $$
 ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
 
 </div>
+
+<div class="border-blue flex-col" style="padding: 5px;--gap: 5px;">
+  <div class="border-red" style="width:20%;">
+    aa
+  </div>
+  <div class="border-yellow" style="width: 50%;">
+    bb
+  </div>
+  <div class="border-green" style="width: 20%;">
+    cc
+  </div>
+</div>
+
+aa
+
+<div class="border-blue flex-row" style="padding: 5px;--gap: 5px;">
+  <div class="border-red" style="width:20%;">
+    aa
+  </div>
+  <div class="border-yellow" style="width: 50%;">
+    bb
+  </div>
+  <div class="border-green" style="width: 20%;">
+    cc
+  </div>
+</div>

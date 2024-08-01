@@ -38,3 +38,27 @@
 .float-clear-right {
   clear: right;
 }
+
+// flex関連
+.flex-col {
+  // 変数
+  --gap: 0;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+}
+.flex-row {
+  // 変数
+  --gap: 0;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+}
