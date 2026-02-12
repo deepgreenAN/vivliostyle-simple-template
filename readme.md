@@ -7,7 +7,6 @@ themeは`vivliostyle.config.js`内で変更する．作成時は`docs/index.md`�
 - vivliostyle-cli(npmでインストール)
 - sass
 - nu
-- pueue
 - just
 
 ## コマンド
@@ -22,18 +21,4 @@ just dev
 
 ```sh
 just build
-```
-
-- デモ
-
-プレビュー
-
-```sh
-just preview_demo
-```
-
-ビルド
-
-```sh
-just build_demo
 ```
