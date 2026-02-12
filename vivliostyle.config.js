@@ -12,9 +12,13 @@ const vivliostyleConfig = {
       path: 'docs/index.md',
       title: 'はじめに',
     },
+    // {
+    //   path: 'demo.md',
+    //   title: 'RSAの基本'
+    // }
   ],
-  output: [ 
-    'テンプレートドキュメント.pdf', 
+  output: [
+    'テンプレートドキュメント.pdf',
   ],
   workspaceDir: '.vivliostyle', // 中間生成物
   // toc: true,

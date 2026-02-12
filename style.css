@@ -1268,13 +1268,13 @@ table.text-align-center td {
   --primary-color-rgb: 0, 37, 140;
   --secondary-color: #fcaf21;
   --secondary-color-rgb: 252, 175, 33;
-  --vs-font-family: "Roboto", "Noto Sans JP", "Verdana", "Yu Gothic";
-  --vs--monospace-font-family: "hack", "Consolas";
+  --vs-font-family: 'Roboto', 'Noto Sans JP', 'Verdana', 'Yu Gothic';
+  --vs--monospace-font-family: 'hack', 'Consolas';
   --vs-section--marker-display: inline;
   --vs-section--h1-marker-content: counter(vs-counter-sec-h1);
-  --vs-section--h2-marker-content: counter(vs-counter-sec-h1) "." counter(vs-counter-sec-h2);
-  --vs-section--h3-marker-content: counter(vs-counter-sec-h1) "." counter(vs-counter-sec-h2) "." counter(vs-counter-sec-h3);
-  --vs-section--h4-marker-content: counter(vs-counter-sec-h1) "." counter(vs-counter-sec-h2) "." counter(vs-counter-sec-h3) "." counter(vs-counter-sec-h4);
+  --vs-section--h2-marker-content: counter(vs-counter-sec-h1) '.' counter(vs-counter-sec-h2);
+  --vs-section--h3-marker-content: counter(vs-counter-sec-h1) '.' counter(vs-counter-sec-h2) '.' counter(vs-counter-sec-h3);
+  --vs-section--h4-marker-content: counter(vs-counter-sec-h1) '.' counter(vs-counter-sec-h2) '.' counter(vs-counter-sec-h3) '.' counter(vs-counter-sec-h4);
   --vs-theme--page-top-left-content: none;
   --vs-theme--page-top-right-content: none;
   --vs-theme--page-bottom-content: none;

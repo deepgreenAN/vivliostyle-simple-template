@@ -16,7 +16,7 @@
 :root {
   // # 自分で利用する変数
   --font-size-text: var(--vs-font-size); // 絶対サイズ
-  --font-size-text-large: calc(1.2 * var(--font-size-text));  // 絶対サイズ
+  --font-size-text-large: calc(1.2 * var(--font-size-text)); // 絶対サイズ
   --page-top-content: env(pub-title);
   --page-bottom-content: counter(page);
 
@@ -67,6 +67,7 @@
 em {
   font-family: 'Playfair Display', 'Noto Serif JP';
 }
+
 blockquote {
   border-left: 8px solid var(--primary-color);
   border-radius: 8px;
@@ -81,12 +82,14 @@ blockquote {
     color: var(--primary-color);
   }
 }
+
 figure {
   figcaption {
     margin: 0;
   }
+
   // タイトル付きソースコード
-  figcaption + pre {
+  figcaption+pre {
     margin-top: 0;
   }
 }
